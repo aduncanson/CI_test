@@ -1,0 +1,26 @@
+name: CI (Continous Integration) pipeline
+
+# Trigger on any push to main/master branch
+on: [push]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+    # This workflow contains a single job called "build"
+    build:
+        # The type of runner that the job will run on
+        runs-on: ubuntu-latest
+
+        # Steps represent a sequence of tasks that will be executed as part of the job
+        steps:
+            # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+            - uses: actions/checkout@v2
+
+            # Run a shell command using the runners shell - | symbol enables multi-line
+            - name: Run shell commands over multiple lines
+                run: |
+                    echo Welcome to the Python-CI-Example!
+                    echo A demonstration of Python CI!
+            - name: Run our "some_basic_tests.py" file
+                run: python some_basic_tests.py
+            - name: Job Status
+                run: echo "   This job's status is ${{ job.status }}."
