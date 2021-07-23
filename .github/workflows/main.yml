@@ -17,10 +17,10 @@ jobs:
 
             # Run a shell command using the runners shell - | symbol enables multi-line
             - name: Run shell commands over multiple lines
-                run: |
+              run: |
                     echo Welcome to the Python-CI-Example!
                     echo A demonstration of Python CI!
             - name: Run our "some_basic_tests.py" file
-                run: python some_basic_tests.py
+              run: python some_basic_tests.py
             - name: Job Status
-                run: echo "   This job's status is ${{ job.status }}."
+              run: echo "   This job's status is ${{ job.status }}."
