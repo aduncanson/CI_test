@@ -56,10 +56,10 @@ jobs:
         uses: jakejarvis/s3-sync-action@v0.3.1
         env:
           SOURCE_DIR: './artifacts/.'
-          AWS_REGION: 'us-east-1'
           AWS_S3_BUCKET: 'printed-documents'
-          AWS_ACCESS_KEY_ID: 'ASIAYJCKGV2T52PBAOU4'
-          AWS_SECRET_ACCESS_KEY: 'yVFrGsaDIV8lXVJVWm+gAOll1z0MWU6VAUpE1oPM'
+          AWS_REGION: ${{ secrets.AWS_REGION }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_SESSION_TOKEN: 'FwoGZXIvYXdzEG8aDBm/kycCCGJrwqgXmyK+AeCF3QUr+k8rbY03RKbh1aFJpC75cNyTOoMgJ0VNdp2T3Oig5HKAWfuu3m8L2GyoCbycRccRka/f95VsxlnQM7OTe+XKcge90FxsPSPEMI6Wb3QRa1RbmNz2Hwa0n9MDo8lY61wVnHmRUoPp3ZtMQsoZlEQAtZwe6Y0a67MauWAVsoXZeGZAwZS4r+miYjvlUxfrhxp4p8Z+PYSdfheq3AyZeI07tHl4PKoRGtkNW+zpZGNx47fYfA5tphmT9eooz/aBiAYyLZ6ILb0MTWaEIswRWm+jJXSyXqclO6GAs1RqwIqIIaSbimQq30iB9Z0J6m+8Dw=='
       - name: Job Stats
         run: echo "🍏 This job's status is ${{ job.status }}."
