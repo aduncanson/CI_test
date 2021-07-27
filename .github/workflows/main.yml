@@ -56,9 +56,9 @@ jobs:
         uses: jakejarvis/s3-sync-action@v0.3.1
         env:
           SOURCE_DIR: './artifacts/.'
-          AWS_REGION: ${{ secrets.AWS_REGION }}
+          AWS_REGION: 'us-east-1'
           AWS_S3_BUCKET: 'printed-documents'
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_ACCESS_KEY_ID: 'ASIAYJCKGV2T52PBAOU4'
+          AWS_SECRET_ACCESS_KEY: 'yVFrGsaDIV8lXVJVWm+gAOll1z0MWU6VAUpE1oPM'
       - name: Job Stats
         run: echo "🍏 This job's status is ${{ job.status }}."
