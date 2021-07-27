@@ -12,7 +12,6 @@ class TestStringMethods(unittest.TestCase):
         self.assertEqual(my_basic_function(), "") # AssertionError
     '''
 
-
     # And one test to pass
     def test_my_basic_function_passes(self):
         self.assertEqual(my_basic_function(), "Hi from my basic function!")
