@@ -114,7 +114,7 @@ class TestLambdaFunction(unittest.TestCase):
             'statusCode': 200,
             'headers': {},
             'body': '"No method exists for PUT"'
-           }
+        }
         self.assertEqual(observed, expected)
 
 
