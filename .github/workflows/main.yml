@@ -61,6 +61,6 @@ jobs:
           aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }}
       - name: push zip to S3
         run: |
-          aws s3 sync './artifacts/.' s3://printed-documents
+          aws s3 sync './artifacts/.' s3://cetm67-ad-package-storage
       - name: Job Stats
         run: echo "🍏 This job's status is ${{ job.status }}."
