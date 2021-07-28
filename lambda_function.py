@@ -38,12 +38,14 @@ def lambda_handler(event, context):
 
     }
 
+
 # Connect to DynamoDB
 def getDynamoDB(table_name):
 
     dynamodb = boto3.resource('dynamodb', aws_access_key_id=aws_access_key_id, aws_secret_access_key=aws_secret_access_key, aws_session_token=aws_session_token, region_name=region_name)
     table = dynamodb.Table(table_name)
     return table
+
 
 # Get a customer
 def getMethod(event):
@@ -55,6 +57,7 @@ def getMethod(event):
         return customer
     except Exception as e:
         return 'Unable to get customer \'' + event['queryStringParameters']['customer_id'] + '\'. Error message: ' + str(e)
+
 
 # Create a customer
 def postMethod(event):
