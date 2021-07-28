@@ -96,19 +96,19 @@ def postMethod(event):
             },
             'required': ['name', 'dob', 'gender', 'loans', 'customer_id', 'address']
         }
-        
+
         if isinstance(event['body'], str):
             body = eval(event['body'])
         else:
             body = event['body']
-        
+
         seq_table = getDynamoDB('Sequences')
         sequence = seq_table.get_item(Key={'table_name': 'Customers'})['Item']
-        
+
         body['customer_id'] = sequence['seq']
-        
+
         new_sequence = str(int(sequence['seq']) + 1)
-        
+
         seq_table.update_item(
             Key={
                 'table_name': 'Customers'
@@ -119,11 +119,11 @@ def postMethod(event):
             },
             ReturnValues="UPDATED_NEW"
         )
-        
+
         validate(body, schema)
-        
+
         table.put_item(Item = body)
-        
+
         return 'Customer created! Customer ID is ' + body['customer_id']
     except Exception as e:
         return 'Unable to create customer. Error message: ' + str(e)
