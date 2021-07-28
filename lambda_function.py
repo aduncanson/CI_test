@@ -8,14 +8,15 @@ from jsonschema import validate
 '''
     Functions
 '''
-aws_access_key_id='ASIAYJCKGV2T7TQ6OBOI'
-aws_secret_access_key='Kfg1bL2QhUR+D+01CJDUpXuYKMsBFt6AIEFzSPKk'
-aws_session_token='FwoGZXIvYXdzEAMaDNL+vR/qvqpolRoGiyK+AadKU+mvw8fRhp+Zqu/lrQ5W6Q4yFvP4XUdzuRLWpm6H+BWRn05gAIq5Rw9wINQnu96b6OLo4ZhPjdg50CYzcZdVlGXRXefta0oRxKNjDC7vdBtJhGV0Nd/R4qt6PDMFY8Vf1/CCtCD5/O1WeKeqGi53MOFf10NR+qFH5Wsl6mjp7qB6PF0zr/EnOy4EpYTCGybP9QxI4GgLDTVtsMNjgZh/az9DHu+EWsM96gaHoIRNINf7qZXdfixhxjCK4M0o65LqhwYyLSoOEHjP6lu8530A6G6sgpT2bfxOpZjyOiGt4hLqFOJKCispj3qOcdCyDW0NBA=='
-region_name='us-east-1'
+aws_access_key_id = 'ASIAYJCKGV2T7TQ6OBOI'
+aws_secret_access_key = 'Kfg1bL2QhUR+D+01CJDUpXuYKMsBFt6AIEFzSPKk'
+aws_session_token = 'FwoGZXIvYXdzEAMaDNL+vR/qvqpolRoGiyK+AadKU+mvw8fRhp+Zqu/lrQ5W6Q4yFvP4XUdzuRLWpm6H+BWRn05gAIq5Rw9wINQnu96b6OLo4ZhPjdg50CYzcZdVlGXRXefta0oRxKNjDC7vdBtJhGV0Nd/R4qt6PDMFY8Vf1/CCtCD5/O1WeKeqGi53MOFf10NR+qFH5Wsl6mjp7qB6PF0zr/EnOy4EpYTCGybP9QxI4GgLDTVtsMNjgZh/az9DHu+EWsM96gaHoIRNINf7qZXdfixhxjCK4M0o65LqhwYyLSoOEHjP6lu8530A6G6sgpT2bfxOpZjyOiGt4hLqFOJKCispj3qOcdCyDW0NBA=='
+region_name = 'us-east-1'
+
 
 # Initial function, access point
 def lambda_handler(event, context):
-    
+
     return_payload = ''
     
     if event['httpMethod'] == 'GET':
