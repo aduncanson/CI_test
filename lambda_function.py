@@ -81,7 +81,7 @@ def postMethod(event):
                     },
                     'required': ['title', 'first_name', 'surname']
                 },
-                'dob': {'type': 'string', 'pattern':'[0-9]{2}\/[0-9]{2}\/[0-9]{4}'},
+                'dob': {'type': 'string', 'pattern': '[0-9]{2}\/[0-9]{2}\/[0-9]{4}'},
                 'gender': {'type': 'string'},
                 'customer_id': {'type': 'string'},
                 'loans': {'type': 'array'},
