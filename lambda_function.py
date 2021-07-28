@@ -18,7 +18,7 @@ region_name = 'us-east-1'
 def lambda_handler(event, context):
 
     return_payload = ''
-    
+
     if event['httpMethod'] == 'GET':
         if event.get('queryStringParameters') is None:
             return_payload = 'Add the query parameter \'customer_id\' to the current URL to return information about the given customer_id.'
@@ -35,13 +35,13 @@ def lambda_handler(event, context):
         'statusCode': 200,
         'headers': {},
         'body': json.dumps(return_payload)
-        
+
     }
 
 # Connect to DynamoDB
 def getDynamoDB(table_name):
 
-    dynamodb = boto3.resource('dynamodb',aws_access_key_id=aws_access_key_id, aws_secret_access_key=aws_secret_access_key, aws_session_token=aws_session_token, region_name=region_name)
+    dynamodb = boto3.resource('dynamodb', aws_access_key_id=aws_access_key_id, aws_secret_access_key=aws_secret_access_key, aws_session_token=aws_session_token, region_name=region_name)
     table = dynamodb.Table(table_name)
     return table
 
@@ -49,7 +49,7 @@ def getDynamoDB(table_name):
 def getMethod(event):
     try:
         table = getDynamoDB('Customers')
-        
+
         customer = table.get_item(Key={'customer_id': event['queryStringParameters']['customer_id']})['Item']
         
         return customer
@@ -63,7 +63,7 @@ def postMethod(event):
         table = getDynamoDB('Customers')
     except Exception as e:
         return 'Unable to connect to \'Customers\' table. Error message: ' + str(e)
-    
+
     try:
         schema = {
             'type': 'object',
@@ -122,7 +122,7 @@ def postMethod(event):
 
         validate(body, schema)
 
-        table.put_item(Item = body)
+        table.put_item(Item=body)
 
         return 'Customer created! Customer ID is ' + body['customer_id']
     except Exception as e:
