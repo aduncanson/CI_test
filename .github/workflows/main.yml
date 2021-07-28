@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      # Runs a single command using the runners shell
+      # Runs a single command using the runners shell 
       - name: Test the Python script "lambda_function.py"
         run: python lambda_function.py
         
