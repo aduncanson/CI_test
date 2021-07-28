@@ -53,7 +53,7 @@ def getMethod(event):
         table = getDynamoDB('Customers')
 
         customer = table.get_item(Key={'customer_id': event['queryStringParameters']['customer_id']})['Item']
-        
+
         return customer
     except Exception as e:
         return 'Unable to get customer \'' + event['queryStringParameters']['customer_id'] + '\'. Error message: ' + str(e)
@@ -61,7 +61,7 @@ def getMethod(event):
 
 # Create a customer
 def postMethod(event):
-    
+
     try:
         table = getDynamoDB('Customers')
     except Exception as e:
