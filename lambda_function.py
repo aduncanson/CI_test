@@ -66,30 +66,30 @@ def postMethod(event):
     
     try:
         schema = {
-            'type' : 'object',
-            'properties' : {
-                'name' : {
-                    'type' : 'object',
-                    'properties' : {
-                        'title' : {'type' : 'string'},
-                        'first_name' : {'type' : 'string'},
-                        'middle_names' : {'type' : 'string'},
-                        'surname' : {'type' : 'string'},
+            'type': 'object',
+            'properties': {
+                'name': {
+                    'type': 'object',
+                    'properties': {
+                        'title': {'type': 'string'},
+                        'first_name': {'type': 'string'},
+                        'middle_names': {'type': 'string'},
+                        'surname': {'type': 'string'},
                     },
                     'required': ['title', 'first_name', 'surname']
                 },
-                'dob' : {'type' : 'string', 'pattern':'[0-9]{2}\/[0-9]{2}\/[0-9]{4}'},
-                'gender' : {'type' : 'string'},
-                'customer_id' : {'type' : 'string'},
-                'loans' : {'type' : 'array'},
-                'address' : {
-                    'type' : 'object',
-                    'properties' : {
-                        'line1' : {'type' : 'string'},
-                        'line2' : {'type' : 'string'},
-                        'line3' : {'type' : 'string'},
-                        'county' : {'type' : 'string'},
-                        'postcode' : {'type' : 'string'},
+                'dob': {'type': 'string', 'pattern':'[0-9]{2}\/[0-9]{2}\/[0-9]{4}'},
+                'gender': {'type': 'string'},
+                'customer_id': {'type': 'string'},
+                'loans': {'type': 'array'},
+                'address': {
+                    'type': 'object',
+                    'properties': {
+                        'line1': {'type': 'string'},
+                        'line2': {'type': 'string'},
+                        'line3': {'type': 'string'},
+                        'county': {'type': 'string'},
+                        'postcode': {'type': 'string'},
                     },
                     'required': ['line1', 'county', 'postcode']
                 },
@@ -113,7 +113,7 @@ def postMethod(event):
             Key={
                 'table_name': 'Customers'
             },
-            UpdateExpression="set seq = :r",
+            UpdateExpression="set seq =:r",
             ExpressionAttributeValues={
                 ':r': new_sequence,
             },
