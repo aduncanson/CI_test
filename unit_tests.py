@@ -8,6 +8,7 @@ print(os.environ.get('AWS_SECRET_ACCESS_KEY'))
 print(os.environ.get('AWS_SESSION_TOKEN'))
 print(os.environ.get('AWS_REGION'))
 
+
 class TestLambdaFunction(unittest.TestCase):
 
     # Test that should pass when posting to customer DynoDb
